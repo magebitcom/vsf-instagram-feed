@@ -266,7 +266,13 @@ export default {
 </script>
 ```
 
+---
+
+![Magebit](https://magebit.com/img/magebit-logo-2x.png)
+
 ## Authors
 
 * **Lorens Milovanovs- Lācis** (lorens.milovanovs.lacis@magebit.com)
 * **Kristofers Ozoliņš** (kristofers.ozolins@magebit.com)
+
+
