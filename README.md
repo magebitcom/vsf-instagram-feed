@@ -15,8 +15,8 @@ Standalone offline ready instagram feed extension for Vue Storefront. Works with
 ### Installation
 
 #### Repository file structure
-- [vue storefront](/instagram-feed/src/master/vue-storefront/) - vue-instagram-feed module
-- [vue-storefront-api](/instagram-feed/src/master/vue-storefront-api/) - vue-instagram-feed-api module
+- [vue storefront](/vue-storefront/) - vue-instagram-feed module
+- [vue-storefront-api](/vue-storefront-api/) - vue-instagram-feed-api module
 
 #### Setting up VSF module
 - Copy content of `vue-storefront` directory to the project root folder
