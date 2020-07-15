@@ -6,7 +6,7 @@ Standalone offline ready instagram feed extension for Vue Storefront. Works with
   * [Repository file structure](#repository-file-structure)
   * [Setting up VSF module](#setting-up-vsf-module)
   * [Setting up VSF-API module](#setting-up-vsf-api-module)
-* [Usage and features](#installation)
+* [Usage and features](#usage-and-features)
   * [Config parameters](#config-parameters)
   * [Using feed data](#using-feed-data)
   * [Default theme example (with preview image)](#default-theme-example)

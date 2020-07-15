@@ -6,7 +6,7 @@ Standalone offline ready instagram feed extension for Vue Storefront. Works with
   * [Repository file structure](#repository-file-structure)
   * [Setting up VSF module](#setting-up-vsf-module)
   * [Setting up VSF-API module](#setting-up-vsf-api-module)
-* [Usage and features](#installation)
+* [Usage and features](#usage-and-features)
   * [Config parameters](#config-parameters)
   * [Using feed data](#using-feed-data)
   * [Default theme example (with preview image)](#default-theme-example)
@@ -15,8 +15,8 @@ Standalone offline ready instagram feed extension for Vue Storefront. Works with
 ### Installation
 
 #### Repository file structure
-- [vue storefront](https://bitbucket.org/magebit/instagram-feed/src/master/vue-storefront/) - vue-instagram-feed module
-- [vue-storefront-api](https://bitbucket.org/magebit/instagram-feed/src/master/vue-storefront-api/) - vue-instagram-feed-api module
+- [vue storefront](/vue-storefront/) - vue-instagram-feed module
+- [vue-storefront-api](/vue-storefront-api/) - vue-instagram-feed-api module
 
 #### Setting up VSF module
 - Copy content of `vue-storefront` directory to the project root folder
@@ -41,14 +41,14 @@ export function registerClientModules () {
 }
 ```
 
-- Add instagram image height and width params to `config/docker.json` and `config/production.json` file:
+- Add instagram image height and width params to `config/docker.json` and `config/production.json` file. These can be changed to fit your needs:
 
 ```json
 "instagram": {
-    "limit": integer
+    "limit": 8,
     "thumbnails": {
-      "width": integer,
-      "height": integer
+      "width": 200,
+      "height": 200
     }
   }
 ```
