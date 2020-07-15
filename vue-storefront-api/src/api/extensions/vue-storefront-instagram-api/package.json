@@ -1,0 +1,17 @@
+{
+  "name": "vue-storefront-instagram-api",
+  "version": "1.2.0",
+  "description": "Standalone offline ready instagram feed extension for Vue Storefront",
+  "main": "index.js",
+  "keywords": [],
+  "author": "Lorens Milovanovs- Lācis <lorens.milovanovs.lacis@magebit.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.3",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-0": "^6.24.1"
+  }
+}

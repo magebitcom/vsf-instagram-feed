@@ -1,0 +1,9 @@
+{
+  "name": "vue-storefront-instagram-feed",
+  "version": "1.2.0",
+  "description": "Standalone offline ready instagram feed extension for Vue Storefront",
+  "main": "index.ts",
+  "keywords": [],
+  "author": "Lorens Milovanovs- Lācis <lorens.milovanovs.lacis@magebit.com>",
+  "license": "MIT"
+}
