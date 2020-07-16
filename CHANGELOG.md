@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ##### Updated
 - New shiny README.md
 - Renamed `media_url` and `media_url_hq` to `image` and `image_hq` respectively so that the feed works out-of-the-box with capybara images grid
+- Moved graphql query id to a constant, since it might change in the future
 
 ##### Fixed
 - Fixed an error when item caption was not set

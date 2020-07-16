@@ -1,13 +1,16 @@
 import { Router } from 'express'
 import request from 'request'
 
+// This might change in the future, but most libraries use it
+const QUERY_ID = '17888483320059182'
+
 module.exports = ({ config }) => {
   const api = Router();
 
   api.get('/feed', (req, res) => {
     const { limit, width, height } = req.query;
     const { profile, id } = config.extensions.instagram;
-    const url = `https://www.instagram.com/graphql/query/?query_id=17888483320059182&variables={"id":${id},"first":${limit},"after":null}`
+    const url = `https://www.instagram.com/graphql/query/?query_id=${QUERY_ID}&variables={"id":${id},"first":${limit},"after":null}`
 
     request(
       {

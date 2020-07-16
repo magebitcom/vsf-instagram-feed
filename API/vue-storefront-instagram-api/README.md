@@ -15,12 +15,12 @@ Standalone offline ready instagram feed extension for Vue Storefront. Works with
 ### Installation
 
 #### Repository file structure
-- [vue storefront](/vue-storefront/) - vue-instagram-feed module
-- [vue-storefront-api](/vue-storefront-api/) - vue-instagram-feed-api module
+- [vue storefront](/) - vue-instagram-feed module
+- [vue-storefront-api](/API/vue-storefront-instagram-api/) - vue-instagram-feed-api module
 
 #### Setting up VSF module
-- Copy content of `vue-storefront` directory to the project root folder
-- Register module in `src/modules/client.ts`
+- Clone this repository in `vue-storefront/src/modules` directory
+- Register module in `src/modules/client.ts` (or `theme/config.modules.ts` for capybara)
 
 ```js
 ...
@@ -99,15 +99,15 @@ To make sure instagram data is available during SSR, add tis dispatch to `before
 ```
 
 #### Setting up VSF-API module
-- Copy content of `vue-storefront-api` directory to the root of project directory
-- Get instagram profile ID:
-- [Here](https://www.instafollowers.co/find-instagram-user-id)
-- Or Go to https://instagram.com/{INSTAGRAM_USERNAME}/ open developer tools and paste this in the console:
-```js
-window._sharedData.entry_data.ProfilePage[0].graphql.user.id
-```
-- Add "vue-storefront-instagram-api" to the list of `registeredExtensions` in your `development.json` and `production.json` config file.
-- Add an `instagram` property to the `extensions` list with the following information:
+- Move content from `src/modules/instragram-feed/API` to `vue-storefront-api/src/extensions`
+- **Get instagram profile ID**:
+  - [Here](https://www.instafollowers.co/find-instagram-user-id)
+  - Or go to https://instagram.com/{INSTAGRAM_USERNAME}/ open developer tools and paste this in the console:
+    ```js
+    window._sharedData.entry_data.ProfilePage[0].graphql.user.id
+    ```
+- Add `vue-storefront-instagram-api` to the list of `registeredExtensions` in your config file.
+- Also, in the config, add an `instagram` property to the `extensions` list with the following information:
 
 ```json
 "extensions": {
@@ -266,7 +266,13 @@ export default {
 </script>
 ```
 
+---
+
+![Magebit](https://magebit.com/img/magebit-logo-2x.png)
+
 ## Authors
 
 * **Lorens Milovanovs- Lācis** (lorens.milovanovs.lacis@magebit.com)
 * **Kristofers Ozoliņš** (kristofers.ozolins@magebit.com)
+
+
