@@ -12,7 +12,7 @@ Standalone offline ready instagram feed extension for Vue Storefront. Works with
   * [Default theme example (with preview image)](#default-theme-example)
   * [Capybara theme example (with preview image)](#capybara-example)
 
-### Installation
+## Installation
 
 #### Repository file structure
 - [vue storefront](/) - vue-instagram-feed module
@@ -124,7 +124,7 @@ To make sure instagram data is available during SSR, add tis dispatch to `before
 }
 ```
 
-### Usage and features
+## Usage and features
 Here are some examples on how to use instagram feed in your project.
 
 #### Config parameters
@@ -265,6 +265,13 @@ export default {
 }
 </script>
 ```
+
+## Contributing
+Found a bug, have a feature suggestion or just want to help in general?
+Contributions are very welcome! Check out the [list of active issues](https://github.com/magebitcom/vsf-instagram-feed/issues) or submit one yourself.
+
+If you're making a bug report, please include as much details as you can and preferably steps to repreduce the issue.
+When creating Pull Requests, don't for get to list your changes in the [CHANGELOG](/CHANGELOG.md) and [README](/README.md) files.
 
 ---
 
