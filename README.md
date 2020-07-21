@@ -11,6 +11,7 @@ Standalone offline ready instagram feed extension for Vue Storefront. Works with
   * [Using feed data](#using-feed-data)
   * [Default theme example (with preview image)](#default-theme-example)
   * [Capybara theme example (with preview image)](#capybara-example)
+* [Contributing](#contributing)
 
 ## Installation
 
