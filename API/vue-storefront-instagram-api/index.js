@@ -1,7 +1,7 @@
 import { Router } from 'express'
 import request from 'request'
-import cache from '../../../lib/cache-instance';
-import {sha3_224} from 'js-sha3';
+import cache from '../../../lib/cache-instance'
+import { sha3_224 } from 'js-sha3'
 
 // This might change in the future, but most libraries use it
 const QUERY_ID = '17888483320059182'
