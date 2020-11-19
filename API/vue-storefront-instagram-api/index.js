@@ -67,6 +67,7 @@ module.exports = ({ config }) => {
             })
 
             apiResult = {code: 200, result: resultObj}
+            _cacheStorageHandler(config, apiResult, reqHash, ['instagram'])
           }
 
           res.status(apiResult.code).json(apiResult)
