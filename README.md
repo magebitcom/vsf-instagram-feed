@@ -15,6 +15,17 @@ Standalone offline ready instagram feed extension for Vue Storefront. Works with
 
 ## Installation
 
+#### Magento2 module
+Version 2 of VSF Instagram Feed requires you to install our [magento module](https://github.com/magebitcom/vsf-instagram-feed-m2)
+Since this extension doesn't use Facebook's oAuth integration, it's important to use the public graphql API as little
+as possible to avoid rate-limiting issues. The new magento module fetches data every hour and saves it to database.
+
+You can install it with composer:
+- `composer require magebit/vsf-instagram-feed`
+
+For manual installation check the module's repository:
+https://github.com/magebitcom/vsf-instagram-feed-m2
+
 #### Repository file structure
 - [vue storefront](/) - vue-instagram-feed module
 - [vue-storefront-api](/API/vue-storefront-instagram-api/) - vue-instagram-feed-api module
