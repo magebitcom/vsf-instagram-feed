@@ -8,19 +8,17 @@ import InstagramFeedState from '../types/InstagramFeedState'
 export const module: Module<InstagramFeedState, RootState> = {
   namespaced: true,
   state: {
-    username: null,
     media: []
   },
   mutations: {
     [types.SET_INSTAGRAM_FEED] (state, payload) {
-      state.media = payload.items
-      state.username = payload.username
+      state.media = payload
     }
   },
   actions: {
-    get ({ getters, commit }, { limit, width, height }) {
+    get ({ getters, commit }, { width, height }) {
       if (!getters.hasItems) {
-        fetch(`${config.instagram.endpoint}?limit=${limit}&width=${width}&height=${height}`)
+        fetch(`${config.instagram.endpoint}?width=${width}&height=${height}`)
           .then(res => {
             return res.json()
           })
@@ -33,7 +31,6 @@ export const module: Module<InstagramFeedState, RootState> = {
   },
   getters: {
     hasItems: state => state.media && state.media.length > 0,
-    media: state => state.media,
-    username: state => state.username
+    media: state => state.media
   }
 }

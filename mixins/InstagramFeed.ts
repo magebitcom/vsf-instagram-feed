@@ -5,9 +5,7 @@ export default {
   computed: {
     ...mapGetters({
       feed: 'instagram-feed/media',
-      hasItems: 'instagram-feed/hasItems',
-      username: 'instagram-feed/username',
-      bio: 'instagram-feed/bio'
+      hasItems: 'instagram-feed/hasItems'
     })
   }
 }

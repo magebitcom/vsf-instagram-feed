@@ -15,6 +15,16 @@ Standalone offline ready instagram feed extension for Vue Storefront. Works with
 
 ## Installation
 
+#### Magento2 module
+Version 2 of VSF Instagram Feed requires you to install our [magento module](https://github.com/magebitcom/vsf-instagram-feed-m2)
+It's a basic wrapper around Instagram's Basic Display API
+
+You can install it with composer:
+- `composer require magebit/vsf-instagram-feed`
+
+For manual installation check the module's repository:
+https://github.com/magebitcom/vsf-instagram-feed-m2
+
 #### Repository file structure
 - [vue storefront](/) - vue-instagram-feed module
 - [vue-storefront-api](/API/vue-storefront-instagram-api/) - vue-instagram-feed-api module
@@ -46,7 +56,6 @@ export function registerClientModules () {
 
 ```json
 "instagram": {
-    "limit": 8,
     "thumbnails": {
       "width": 200,
       "height": 200
@@ -57,7 +66,6 @@ export function registerClientModules () {
 - To load instagram data, you need to dispatch `instagram-feed/get` action:
 ```js
 this.$store.dispatch('instagram-feed/get', {
-  limit: config.instagram.limit,
   width: config.instagram.thumbnails.width,
   height: config.instagram.thumbnails.height
 })
@@ -74,7 +82,6 @@ To make sure instagram data is available during SSR, add tis dispatch to `before
         await Promise.all([
           ...
           vm.$store.dispatch('instagram-feed/get', {
-            limit: config.instagram.limit,
             width: config.instagram.thumbnails.width,
             height: config.instagram.thumbnails.height
           })
@@ -90,7 +97,6 @@ To make sure instagram data is available during SSR, add tis dispatch to `before
     await Promise.all([
       ...
       store.dispatch('instagram-feed/get', {
-        limit: config.instagram.limit,
         width: config.instagram.thumbnails.width,
         height: config.instagram.thumbnails.height
       })
@@ -108,16 +114,7 @@ To make sure instagram data is available during SSR, add tis dispatch to `before
     window._sharedData.entry_data.ProfilePage[0].graphql.user.id
     ```
 - Add `vue-storefront-instagram-api` to the list of `registeredExtensions` in your config file.
-- Also, in the config, add an `instagram` property to the `extensions` list with the following information:
 
-```json
-"extensions": {
-    "instagram": {
-      "profile": "CLIENT_INSTAGRAM_USERNAME",
-      "id": "CLIENT_INSTAGRAM_PROFILE_ID"
-    }
-  }
-```
 - To return absolute image urls, also add `server.url` field to your api config:
 ```json
 "server": {
@@ -133,12 +130,11 @@ Here are some examples on how to use instagram feed in your project.
 - **instagram**
   - **width** (int) required - Thumbnail width
   - **height** (int) required - Thumbnail height
-  - **limit** (int) required - Instagram image limit
 
 These values will be used to construct a URL to the instagram feed VUE-API extension:
 
 ```
-project.local:8080/api/ext/vue-storefront-instagram-api/feed?limit=5&width=370&height=370
+project.local:8080/api/ext/vue-storefront-instagram-api/feed?width=370&height=370
 ```
 This returns a JSON object with feed items
 
@@ -153,9 +149,7 @@ import { mapGetters } from 'vuex'
   computed: {
     ...mapGetters({
       feed: 'instagram-feed/media',
-      hasItems: 'instagram-feed/hasItems',
-      username: 'instagram-feed/username',
-      bio: 'instagram-feed/bio'
+      hasItems: 'instagram-feed/hasItems'
     })
   }
 }
@@ -188,7 +182,7 @@ Here's a simple component you can use in the default theme
         <a :href="media.pemalink">
           <img
             class="tile-image"
-            v-lazy="media.image"
+            v-lazy="media.media_url_thumb"
             :alt="media.caption"
           >
         </a>
@@ -228,39 +222,6 @@ export default {
   // ...
   components: {
     Instagram
-  }
-  // ...
-}
-</script>
-```
-
-### Capybara example
-In Capybara you can use the built-in `a-images-grid.vue` atom and it will work just fine!
-
-![Capybara](https://i.imgur.com/2H58yGu.png)
-
-- **pages/Home.vue**
-
-```vue
-<template>
-  <!-- ... -->
-  <SfSection
-    :title-heading="$t('Instagram feed')"
-    subtitle-heading="@magebitcom"
-    class="section"
-  >
-    <AImagesGrid :images="feed" />
-  </SfSection>
-  <!-- ... -->
-</template>
-
-<script>
-export default {
-  // ...
-  computed: {
-    ...mapGetters({
-      feed: 'instagram-feed/media'
-    })
   }
   // ...
 }
