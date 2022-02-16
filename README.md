@@ -107,12 +107,6 @@ To make sure instagram data is available during SSR, add tis dispatch to `before
 
 #### Setting up VSF-API module
 - Move content from `src/modules/instragram-feed/API` to `vue-storefront-api/src/extensions`
-- **Get instagram profile ID**:
-  - [Here](https://www.instafollowers.co/find-instagram-user-id)
-  - Or go to https://instagram.com/{INSTAGRAM_USERNAME}/ open developer tools and paste this in the console:
-    ```js
-    window._sharedData.entry_data.ProfilePage[0].graphql.user.id
-    ```
 - Add `vue-storefront-instagram-api` to the list of `registeredExtensions` in your config file.
 
 - To return absolute image urls, also add `server.url` field to your api config:
